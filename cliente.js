@@ -18,7 +18,14 @@ function solicitarAdicao(titulo, categoria) {
     console.log('resposta do servidor:', respostaServidor);
 }
 
+function solicitarRemoçao(id) {
+    const requisicao = {acao: 'remover', id}
+    const respostaServidor = processarRequisicao(requisicao)
+    console.log('removido', respostaServidor)
+}
+
 solicitarConsulta('LionsDev')
 solicitarListagem()
 solicitarAdicao('Harry Potter', 'livros')
 solicitarListagem()
+solicitarRemoçao()

@@ -20,6 +20,13 @@ function processarRequisicao(requisicao){
             
         default: 
             return { mensagem: 'açao invalida' }
+
+        case 'REMOVER'
+            baralhos.find(d =>d.id === id) || {mensagem: 'id nao encontrado'}
+            return baralhos.splice(id -1, 1)
+
+        default:
+            return {mensagem: 'açao invalida'}
     }
 }
 
